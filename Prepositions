@@ -1,0 +1,57 @@
+import random
+
+# List of prepositions
+prepositions = [
+    "in", "on", "at", "by", "with", "about", "against", "between", "into", "through",
+    "during", "before", "after", "above", "below", "to", "from", "up", "down",
+    "over", "under", "next to", "beside", "behind", "in front of", "among", "along",
+    "across", "within", "without", "towards", "onto", "off", "around", "past"
+]
+
+# List of sentences with missing prepositions
+sentence_templates = [
+    "The book is ___ the table.",
+    "She is interested ___ science.",
+    "We will meet ___ Monday.",
+    "The cat jumped ___ the fence.",
+    "He walked ___ the park.",
+    "They are sitting ___ the corner.",
+    "The ball rolled ___ the street.",
+    "The plane flew ___ the clouds.",
+    "She put the keys ___ her bag.",
+    "I will see you ___ the airport.",
+    "He ran ___ the hill.",
+    "This road leads ___ the city.",
+    "She was born ___ 1995.",
+    "He is standing ___ the door.",
+    "The train passes ___ the bridge.",
+    "There is a spider ___ the ceiling.",
+    "We will arrive ___ noon.",
+    "She is hiding ___ the tree.",
+    "The restaurant is ___ the bank.",
+    "He moved ___ the village last year.",
+    "The keys are ___ the drawer.",
+    "She walked ___ the riverbank.",
+    "There is a mirror ___ the wall.",
+    "The cat is sleeping ___ the bed.",
+    "She climbed ___ the mountain.",
+    "The meeting starts ___ 10 AM.",
+    "The stars are visible ___ the sky.",
+    "He placed the vase ___ the table.",
+    "She is leaning ___ the wall.",
+    "He jumped ___ the water."
+]
+
+# Generate 100 problems
+problems = []
+for i in range(1, 101):
+    sentence = random.choice(sentence_templates)
+    correct_preposition = sentence.split("___")[1] if "___" in sentence else "N/A"
+    problems.append(f"**{i}.** {sentence}")
+
+# Save to a Markdown file
+with open("preposition_problems.md", "w", encoding="utf-8") as file:
+    file.write("# 100 Preposition Problems\n\n")
+    file.write("\n".join(problems))
+
+print("Preposition problems saved to 'preposition_problems.md'")
